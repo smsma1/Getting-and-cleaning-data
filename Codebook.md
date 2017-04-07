@@ -93,7 +93,7 @@ Save the data to a tab delimited file named: tidydata.txt
 
 Reproducing the Project
 
-Review the markdown for how the script works at run_analysis.md
+Review the markdown for how the script works at   run_analysis.md
 Open the R script run_analysis.R using your favorite IDE or text editor
 Change your workding directory in the script 'setwd()' to be where R script is saved, and save
 Run the script

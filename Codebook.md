@@ -1,8 +1,11 @@
 CodeBook
 
+
 This is the code book that describes the variables, data, and any transformations or work that was performed to tidy the source dataset.
 
 Data Source
+
+
 
 Description and details of the data set http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 

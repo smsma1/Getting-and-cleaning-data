@@ -1,101 +1,96 @@
-Codebook
-========================================================
+CodeBook
 
-Data Set Information
-----------------------
+This is the code book that describes the variables, data, and any transformations or work that was performed to tidy the source dataset.
 
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+Data Source
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+Description and details of the data set http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Attribute Information
-------------------------
+Data Files
 
-For each record in the dataset it is provided:
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope.
-- Its activity label.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-Citation Request
------------------------
+The Tidying Process
 
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+Sourcing the data
 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Create a local folder to receive the data
+Define the url source of the dataset, and download the file
+Unzip the downloaded file to the target data folder
+Inspect the data files
 
+The relevant data for this project can be found in three type of files
 
-### Variable Descriptions
+Activity Files - 'Y' prefix files
+Y_test.txt
+Y_train.txt
+Subject Files - 'subject' prefix files
+subject_train.txt
+subject_test.txt
+Feature files - 'X' prefix files
+X_test.txt
+X_train.txt
+Merge the datasets into one dataset
 
+Sample rows of each type of dataset
 
-| Variable | Description
------------|-------------
-| activities | The activity performed
-| subject | Subject ID
-| tbodyacc-mean-x | Mean time for acceleration of body for X direction
-| tbodyacc-mean-y | Mean time for acceleration of body for Y direction
-| tbodyacc-mean-z | Mean time for acceleration of body for Z direction
-| tbodyacc-std-x | Standard deviation of time for acceleration of body for X direction
-| tbodyacc-std-y | Standard deviation of time for acceleration of body for Y direction
-| tbodyacc-std-z | Standard deviation of time for acceleration of body for Z direction
-| tgravityacc-mean-x | Mean time of acceleration of gravity for X direction
-| tgravityacc-mean-y | Mean time of acceleration of gravity for Y direction
-| tgravityacc-mean-z | Mean time of acceleration of gravity for Z direction
-| tgravityacc-std-x | Standard deviation of time of acceleration of gravity for X direction
-| tgravityacc-std-y | Standard deviation of time of acceleration of gravity for Y direction
-| tgravityacc-std-z | Standard deviation of time of acceleration of gravity for Z direction
-| tbodyaccjerk-mean-x | Mean time of body acceleration jerk for X direction
-| tbodyaccjerk-mean-y | Mean time of body acceleration jerk for Y direction
-| tbodyaccjerk-mean-z | Mean time of body acceleration jerk for Z direction
-| tbodyaccjerk-std-x | Standard deviation of time of body acceleration jerk for X direction
-| tbodyaccjerk-std-y | Standard deviation of time of body acceleration jerk for Y direction
-| tbodyaccjerk-std-z | Standard deviation of time of body acceleration jerk for Z direction
-| tbodygyro-mean-x | Mean body gyroscope measurement for X direction
-| tbodygyro-mean-y | Mean body gyroscope measurement for Y direction
-| tbodygyro-mean-z | Mean body gyroscope measurement for Z direction
-| tbodygyro-std-x | Standard deviation of body gyroscope measurement for X direction
-| tbodygyro-std-y | Standard deviation of body gyroscope measurement for Y direction
-| tbodygyro-std-z | Standard deviation of body gyroscope measurement for Z direction
-| tbodygyrojerk-mean-x | Mean jerk signal of body for X direction
-| tbodygyrojerk-mean-y | Mean jerk signal of body for Y direction
-| tbodygyrojerk-mean-z | Mean jerk signal of body for Z direction
-| tbodygyrojerk-std-x | Standard deviation of jerk signal of body for X direction
-| tbodygyrojerk-std-y | Standard deviation of jerk signal of body for Y direction
-| tbodygyrojerk-std-z | Standard deviation of jerk signal of body for Z direction
-| tbodyaccmag-mean | Mean magnitude of body Acc
-| tbodyaccmag-std | Standard deviation of magnitude of body Acc
-| tgravityaccmag-mean | Mean gravity acceleration magnitude
-| tgravityaccmag-std | Standard deviation of gravity acceleration magnitude
-| tbodyaccjerkmag-mean | Mean magnitude of body acceleration jerk
-| tbodyaccjerkmag-std | Standard deviation of magnitude of body acceleration jerk
-| tbodygyromag-mean | Mean magnitude of body gyroscope measurement
-| tbodygyromag-std | Standard deviation of magnitude of body gyroscope measurement
-| tbodygyrojerkmag-mean | Mean magnitude of body body gyroscope jerk measurement
-| tbodygyrojerkmag-std | Standard deviation of magnitude of body body gyroscope jerk measurement
-| fbodyacc-mean-x | Mean frequency of body acceleration for X direction
-| fbodyacc-mean-y | Mean frequency of body acceleration for Y direction
-| fbodyacc-mean-z | Mean frequency of body acceleration for Z direction
-| fbodyacc-std-x | Standard deviation of frequency of body acceleration for X direction
-| fbodyacc-std-y | Standard deviation of frequency of body acceleration for Y direction
-| fbodyacc-std-z | Standard deviation of frequency of body acceleration for Z direction
-| fbodyaccjerk-mean-x | Mean frequency of body accerlation jerk for X direction
-| fbodyaccjerk-mean-y | Mean frequency of body accerlation jerk for Y direction
-| fbodyaccjerk-mean-z | Mean frequency of body accerlation jerk for Z direction
-| fbodyaccjerk-std-x | Standard deviation frequency of body accerlation jerk for X direction
-| fbodyaccjerk-std-y | Standard deviation frequency of body accerlation jerk for Y direction
-| fbodyaccjerk-std-z | Standard deviation frequency of body accerlation jerk for Z direction
-| fbodygyro-mean-x | Mean frequency of body gyroscope measurement for X direction
-| fbodygyro-mean-y | Mean frequency of body gyroscope measurement for Y direction
-| fbodygyro-mean-z | Mean frequency of body gyroscope measurement for Z direction
-| fbodygyro-std-x | Standard deviation frequency of body gyroscope measurement for X direction
-| fbodygyro-std-y | Standard deviation frequency of body gyroscope measurement for Y direction
-| fbodygyro-std-z | Standard deviation frequency of body gyroscope measurement for Z direction
-| fbodyaccmag-mean | Mean frequency of body acceleration magnitude
-| fbodyaccmag-std | Standard deviation of frequency of body acceleration magnitude
-| fbodybodyaccjerkmag-mean | Mean frequency of body acceleration jerk magnitude
-| fbodybodyaccjerkmag-std | Standard deviation of frequency of body acceleration jerk magnitude
-| fbodybodygyromag-mean | Mean frequency of magnitude of body gyroscope measurement
-| fbodybodygyromag-std | Standard deviation of frequency of magnitude of body gyroscope measurement
-| fbodybodygyrojerkmag-mean | Mean frequency of magnitude of body gyroscope jerk measurement
-| fbodybodygyrojerkmag-std | Standard deviation frequency of magnitude of body gyroscope jerk measurement
+Activty
 
+'data.frame':	10299 obs. of  1 variable:
+ $ activity: int  5 5 5 5 5 5 5 5 5 5 ...
+Subject
 
+'data.frame':	10299 obs. of  1 variable:
+ $ subject: int  2 2 2 2 2 2 2 2 2 2 ...
+Features
+
+'data.frame':	10299 obs. of  561 variables:
+ $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
+ $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
+ $ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
+ $ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
+ $ tBodyAcc-std()-Y                    : num  -0.92 -0.967 -0.97 -0.973 -0.967 ...
+ $ tBodyAcc-std()-Z                    : num  -0.668 -0.945 -0.963 -0.967 -0.978 ...
+Combined datasets
+
+'data.frame':	10299 obs. of  563 variables:
+ $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
+ $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
+ $ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
+ $ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
+ $ tBodyAcc-std()-Y                    : num  -0.92 -0.967 -0.97 -0.973 -0.967 ...
+ $ tBodyAcc-std()-Z                    : num  -0.668 -0.945 -0.963 -0.967 -0.978 ...
+Subset out only the mean and std columns
+
+'data.frame':	10299 obs. of  68 variables:
+ $ tBodyAcc-mean()-X          : num  0.257 0.286 0.275 0.27 0.275 ...
+ $ tBodyAcc-mean()-Y          : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
+ $ tBodyAcc-mean()-Z          : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.129
+ $ subject                    : int  2 2 2 2 2 2 2 2 2 2 ...
+ $ activity                   : int  5 5 5 5 5 5 5 5 5 5 ...
+Associate activity names, and relabel columns names with more descriptiive titles
+
+The result is a tidy daset
+
+'data.frame':	10299 obs. of  69 variables:
+ $ activityNum                                   : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ activity                                      : chr  "walking" "walking" "walking" "walking" ...
+ $ timeBodyAccelerometer-mean()-X                : num  0.231 0.331 0.376 0.233 0.236 ...
+ $ timeBodyAccelerometer-mean()-Y                : num  -0.0177 -0.0185 -0.0247 -0.0345 -0.0144 ...
+ $ timeBodyAccelerometer-mean()-Z                : num  -0.122 -0.17 -0.157 -0.105 -0.124 ...
+ $ timeBodyAccelerometer-std()-X                 : num  -0.419 -0.145 -0.107 -0.175 -0.21 ...
+ $ timeBodyAccelerometer-std()-Y                 : num  -0.13923 -0.09825 0.06609 0.00431 -0.07492 ...
+ $ timeBodyAccelerometer-std()-Z                 : num  -0.3862 -0.0239 -0.1973 -0.3154 -0.247 ...
+ $ timeGravityAccelerometer-mean()-X             : num  0.965 0.962 0.966 0.965 0.962 ...
+ $ timeGravityAccelerometer-mean()-Y             : num  -0.128 -0.12 -0.126 -0.124 -0.119 ...
+ $ timeGravityAccelerometer-mean()-Z             : num  0.1084 0.1275 0.0901 0.06 0.0665 ...
+Save to file
+
+Save the data to a tab delimited file named: tidydata.txt
+
+Reproducing the Project
+
+Review the markdown for how the script works at run_analysis.md
+Open the R script run_analysis.R using your favorite IDE or text editor
+Change your workding directory in the script 'setwd()' to be where R script is saved, and save
+Run the script
